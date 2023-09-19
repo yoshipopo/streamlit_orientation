@@ -106,7 +106,7 @@ def main():
       #st.dataframe(temp_forshow)
     
    
-    =_ """#100に揃えた価格推移
+    """#100に揃えた価格推移
     b=df_price_100
     st.dataframe(b)
     fig = go.Figure()
