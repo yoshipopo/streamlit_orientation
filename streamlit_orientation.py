@@ -23,7 +23,7 @@ st.set_page_config(layout="wide")
 def main():
   st.title('今井研 orientation(Haruki Yoshida) 2023/9/19')
   st.write('自身で株式を3銘柄選択&データ取得期間設定→MCを行い有効フロンティアを描画')
-  st.write('APIに使用制限があるので注意．大量にリクエストを飛ばすのはNG　　\n　　全銘柄をETF・ETNにするとKeyErrorが起こる場合あり 　\n グラフの凡例(右側)をクリックするとその凡例を弾いて表示することが可能')
+  st.write('APIに使用制限があるので注意．大量にリクエストを飛ばすのはNG　　\  n　　全銘柄をETF・ETNにするとKeyErrorが起こる場合あり 　\  n グラフの凡例(右側)をクリックするとその凡例を弾いて表示することが可能')
   
   st.write('sys.version:',sys.version)
   
