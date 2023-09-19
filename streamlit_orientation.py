@@ -106,7 +106,7 @@ def main():
       #st.dataframe(temp_forshow)
     
    
-    #100に揃えた価格推移
+    _ = '''#100に揃えた価格推移
     b=df_price_100
     fig = go.Figure()
     for i in range(len(selected_company_list_hyouji_datenashi)):
@@ -120,7 +120,7 @@ def main():
     fig.update_layout(showlegend=True)
     #fig.add_shape(type="line",x0=standard_date, y0=0, x1=standard_date, y1=100, line=dict(color="black",width=1))
     st.plotly_chart(fig)
-    
+    '''
 
     ######対数収益率グラフ
     c=df_tourakuritu_merged
