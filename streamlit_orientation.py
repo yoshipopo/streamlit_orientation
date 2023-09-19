@@ -104,25 +104,7 @@ def main():
 
     #with st.expander('元データ(df_price_merged)'):
       #st.dataframe(temp_forshow)
-    
-   
-    """#100に揃えた価格推移
-    b=df_price_100
-    st.dataframe(b)
-    fig = go.Figure()
-    for i in range(len(selected_company_list_hyouji_datenashi)):
-      fig.add_trace(go.Scatter(x = b['Date'],y = b.iloc[:,i+1],name = selected_company_list_hyouji_datenashi[i]))
-    fig.update_traces(hovertemplate='%{y}')
-    fig.update_layout(hovermode='x')
-    fig.update_layout(height=500,width=800,
-                      title='株価 : Stock Price({}=100)'.format(standard_date.date()),
-                      xaxis={'title': 'Date'},
-                      yaxis={'title': 'price'})
-    fig.update_layout(showlegend=True)
-    #fig.add_shape(type="line",x0=standard_date, y0=0, x1=standard_date, y1=100, line=dict(color="black",width=1))
-    st.plotly_chart(fig)
-    """
-
+  
     ######対数収益率グラフ
     c=df_tourakuritu_merged
     fig = go.Figure()
