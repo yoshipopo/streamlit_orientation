@@ -21,8 +21,9 @@ import plotly.express as px
 st.set_page_config(layout="wide")
 
 def main():
-  st.title('経営管理論　模範解答(Haruki Yoshida) 2023/7/31')
+  st.title('今井研 orientation(Haruki Yoshida) 2023/9/19')
   st.write('自身で株式を3銘柄選択&データ取得期間設定→MCを行い有効フロンティアを描画')
+  st.write('APIに使用制限があるので注意．大量にリクエストを飛ばすのはNG')
   st.write('sys.version:',sys.version)
   
   
@@ -183,7 +184,7 @@ def main():
     st.write('相関係数 : correlation')
     st.dataframe(df_temp_corr)
     
-    _ = """　色付きで，綺麗に相関係数描画
+    #色付きで，綺麗に相関係数描画
     with st.expander('メモ'):
       fig_corr = px.imshow(df_temp_corr, text_auto=True, 
                            zmin=-1,zmax=1,
@@ -193,7 +194,7 @@ def main():
       st.plotly_chart(fig_corr)
       
       st.dataframe(pd.concat([df_temp_expreturn, df_temp_stdev, df_temp_corr], axis=1))
-    """
+    
     
     #あとポートフォリオ
     st.write('ポートフォリオの投資比率が100%になっていることを確認していればよい．')
