@@ -55,8 +55,8 @@ def main():
       st.write('selected_company_list_hyouji_datenashi:', selected_company_list_hyouji_datenashi)
   
   #パラメータ設定
-  duration_start = st.date_input("データ開始日?", dt.date(2022, 4, 20))
-  duration_end = st.date_input("データ終了日?", dt.date(2023, 4, 21))
+  duration_start = st.date_input("データ開始日?", dt.date(2022, 9, 30))
+  duration_end = st.date_input("データ終了日?", dt.date(2023, 9, 30))
   #st.write('データ収集一番最初の日', duration_start)
   
   #duration = st.slider('Years? : 株価取得期間は？(年)',1,5,1,)
@@ -105,7 +105,7 @@ def main():
     #with st.expander('元データ(df_price_merged)'):
       #st.dataframe(temp_forshow)
     
-    _ = """
+   
     #100に揃えた価格推移
     b=df_price_100
     fig = go.Figure()
@@ -120,7 +120,7 @@ def main():
     fig.update_layout(showlegend=True)
     #fig.add_shape(type="line",x0=standard_date, y0=0, x1=standard_date, y1=100, line=dict(color="black",width=1))
     st.plotly_chart(fig)
-    """
+    
 
     ######対数収益率グラフ
     c=df_tourakuritu_merged
@@ -185,15 +185,15 @@ def main():
     st.dataframe(df_temp_corr)
     
     #色付きで，綺麗に相関係数描画
-    with st.expander('メモ'):
-      fig_corr = px.imshow(df_temp_corr, text_auto=True, 
+    #with st.expander('メモ'):
+    fig_corr = px.imshow(df_temp_corr, text_auto=True, 
                            zmin=-1,zmax=1,
                            color_continuous_scale=['blue','white','red'])
-      fig_corr.update_layout(height=500,width=800,
+    fig_corr.update_layout(height=500,width=800,
                              title='Correlation of log-return: 対数収益率の相関係数')
-      st.plotly_chart(fig_corr)
+    st.plotly_chart(fig_corr)
       
-      st.dataframe(pd.concat([df_temp_expreturn, df_temp_stdev, df_temp_corr], axis=1))
+    st.dataframe(pd.concat([df_temp_expreturn, df_temp_stdev, df_temp_corr], axis=1))
     
     
     #あとポートフォリオ
